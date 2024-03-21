@@ -138,6 +138,62 @@ a {
   width: 200px;
   height: 70px;
 }
+.page-footer {
+  margin-top: 110px;
+}
+.page-footer::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #001e45;
+}
+.page-footer__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.page-footer__pic-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-footer__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page-footer__pic {
+  width: 100%;
+}
+.page-footer__it-academy,
+.page-footer__gazprom {
+  width: 350px;
+}
+.page-footer__copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  margin-top: -70px;
+}
+.page-footer__text {
+  font-family: 'nunito';
+  font-size: 22px;
+}
 .container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
