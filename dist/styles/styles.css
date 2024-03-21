@@ -5,6 +5,12 @@
   font-display: swap;
   src: url(https://github.com/IsamiRi/overdoze-sans/raw/main/overdozesans.otf) format('otf');
 }
+@font-face {
+  font-family: 'nunito';
+  src: local("Nunito"), url("../assets/fonts/Nunito.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
 html,
 body {
   width: 100%;
@@ -39,11 +45,55 @@ body {
 a {
   text-decoration: none;
 }
+.btn {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24px 0 24px;
+  border: 2px solid #001e45;
+  border-radius: 100px;
+  background-color: #014e92;
+  outline: none;
+  color: #FFFFFF;
+  font-family: "nunito";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn:active {
+  background-color: #001e45;
+  color: #FFFFFF;
+}
+.btn--white {
+  background-color: #FFFFFF;
+  color: #001e45;
+  font-weight: 700;
+}
+.btn--white:active {
+  background-color: #DEFCFF;
+  color: #001e45;
+}
 .page-header {
   top: 0;
   right: 0;
   left: 0;
   height: 150px;
+}
+.page-header::after {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: #001e45;
 }
 .page-header__container {
   -webkit-box-sizing: border-box;
@@ -64,11 +114,29 @@ a {
           justify-content: space-between;
   position: relative;
 }
+.page-header__logo {
+  height: 150px;
+}
 .page-header__logo-text {
   font-family: 'overdoze sans';
   color: #001e45;
   font-size: 128px;
   margin: 0;
+}
+.page-header__right-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+}
+.page-header__sign-up,
+.page-header__sign-in {
+  width: 200px;
+  height: 70px;
 }
 .container {
   -webkit-box-sizing: border-box;
@@ -78,4 +146,14 @@ a {
   margin: 0 auto;
   padding-left: 40px;
   padding-right: 40px;
+}
+@media (hover: hover) {
+  .btn:hover {
+    background-color: #001e45;
+    color: #FFFFFF;
+  }
+  .btn--white:hover {
+    background-color: #DEFCFF;
+    color: #001e45;
+  }
 }
