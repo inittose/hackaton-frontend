@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    @@include('blocks/head.html')
+
+    <body class="main">
+
+        @@include('blocks/page-header.html')
+
+        <div class="constructor">
+            <div class="constructor__container">
+                <div class="constructor__wrapper">
+                    @@include('blocks/question-type-text.html')
+                    @@include('blocks/question-type-number.html')
+                    @@include('blocks/question-type-select.html')
+                    @@include('blocks/question-type-date.html')
+                </div>
+            </div>
+        </div>
+
+        @@include('blocks/page-footer.html')
+    </body>
+</html>

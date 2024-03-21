@@ -1,0 +1,50 @@
+.constructor-card {
+    &__question-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__number {
+        width: 200px;
+    }
+
+    &__field {
+        width: 100%;
+        height: 200px;
+    }
+
+    &__field-text {
+        border: 5px solid @blue-dark;
+        border-radius: 50px;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__buttons-wrapper {
+        margin-top: 240px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    &__discard,
+    &__save {
+        width: 200px;
+    }
+
+    &__discard {
+        color: @blue-light;
+        transition: color 0.2s, text-decoration 0,2s;
+        text-align: center;
+        font-family: 'nunito';
+        font-size: 24px;
+        font-weight: 700;
+
+        &:hover {
+            color: @blue-dark;
+            text-decoration: underline;
+        }
+    }
+}
