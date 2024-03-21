@@ -203,12 +203,105 @@ a {
   padding-left: 40px;
   padding-right: 40px;
 }
+.regisration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.regisration__container {
+  padding: 15px;
+}
+.regisration__text {
+  font-family: 'nunito';
+  color: #001e45;
+  font-size: 64;
+  margin: 15;
+}
+.regisration__button {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 24px 0 24px;
+  border: 2px solid #001e45;
+  border-radius: 100px;
+  background-color: #014e92;
+  outline: none;
+  color: #FFFFFF;
+  font-family: "nunito";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.regisration__button:active {
+  background-color: #001e45;
+  color: #FFFFFF;
+}
+.regisration__button--white {
+  background-color: #FFFFFF;
+  color: #001e45;
+  font-weight: 700;
+}
+.regisration__button--white:active {
+  background-color: #DEFCFF;
+  color: #001e45;
+}
+.signIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.signIn__container {
+  font-family: 'nunito';
+  font-size: 128px;
+  color: #001e45;
+}
+.signIn__signInForm {
+  padding: 20px;
+}
+.signIn__text {
+  font-family: 'nunito';
+  color: #001e45;
+  font-size: 128px;
+  margin: 0;
+}
+.signIn__button:active {
+  color: #018591;
+}
 @media (hover: hover) {
   .btn:hover {
     background-color: #001e45;
     color: #FFFFFF;
   }
   .btn--white:hover {
+    background-color: #DEFCFF;
+    color: #001e45;
+  }
+  .regisration__button:hover {
+    background-color: #001e45;
+    color: #FFFFFF;
+  }
+  .regisration__button--white:hover {
     background-color: #DEFCFF;
     color: #001e45;
   }

@@ -2,18 +2,22 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
-    &__container{
 
+    &__container{
+        font-family: 'nunito';
+        font-size: 128px;
+        color: @blue-dark;
+    }
+
+    &__signInForm{
+        padding: 20px;
     }
 
     &__text{
-        font-family: "nunito";
-        font-size: 64;
+        font-family: 'nunito';
         color: @blue-dark;
-    }
-    
-    &__button{
-        color: @blue-dark;
+        font-size: 128px;   
+        margin: 0;
     }
     &__button:active{
         color: @cyan-dark;
