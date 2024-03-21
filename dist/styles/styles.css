@@ -266,6 +266,42 @@ p {
 .test-link__field {
   width: 720px;
 }
+.stats {
+  margin-top: 210px;
+}
+.stats__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.stats__title {
+  font-family: 'overdoze sans';
+  font-size: 96px;
+  text-align: center;
+}
+.stats__dif-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 48px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.stats__completed,
+.stats__crafted {
+  border: 10px solid;
+  border-radius: 50px;
+  width: 650px;
+}
 .page-header {
   top: 0;
   right: 0;
