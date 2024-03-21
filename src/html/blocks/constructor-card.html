@@ -1,0 +1,100 @@
+<article class="constructor-card" id="constructor-card">
+    <div id="question-template" style="display: none;">
+        <div class="field constructor-card__type-select">
+            <h1 class="field__label constructor-card__select-label">Выберите тип вопроса:</h1>
+            <select name="amount" class="field__select">
+                <option value="text">Текст</option>
+                <option value="number">Номер</option>
+                <option value="select">Список</option>
+                <option value="date">Дата</option>
+            </select>
+        </div>
+    
+        <div class="constructor-card__container">
+            <div class="constructor-card__question-wrapper">
+                <h1 class="constructor-card__number">
+                    Вопрос #:   
+                </h1>
+                <label class="field constructor-card__field">
+                    <input type="text" 
+                    name="question-text" 
+                    class="field__text constructor-card__field-text" 
+                    placeholder="Текст вопроса" 
+                    required/>
+                </label>
+            </div>
+        
+            <div class="question question--text" 
+            id="text-question" 
+            style="display: none;">
+                <label class="field question__field">
+                    <span class="field__label">Напишите ответ на вопрос:</span>
+                    <input type="text" 
+                        name="answer-text" 
+                        class="field__text question__field-text" 
+                        placeholder="Текст" 
+                        readonly/>
+                </label>    
+            </div>
+    
+            <div class="question question--number" 
+            id="number-question" 
+            style="display: none;">
+                <label class="field question__field">
+                    <span class="field__label">Напишите число:</span>
+                    <input type="text" 
+                        name="answer-text" 
+                        class="field__text question__field-text" 
+                        placeholder="Число" 
+                        readonly/>
+                </label>    
+            </div>
+    
+            <div class="question question--select" id="select-question" style="display: none;">
+                <label class="field question__field">
+                    <span class="field__label">Выберите варианты:</span>
+                    <input type="text" 
+                    name="select1" 
+                    class="field__text question__field-text" 
+                    placeholder="Опция 1">
+                    <input type="text" 
+                    name="select2" 
+                    class="field__text question__field-text" 
+                    placeholder="Опция 2">
+                    <input type="text" 
+                    name="select3" 
+                    class="field__text question__field-text" 
+                    placeholder="Опция 3">
+                    <input type="text" 
+                    name="select4" 
+                    class="field__text question__field-text" 
+                    placeholder="Опция 4">
+                </label>    
+            </div>
+         
+            <div class="question question--date" 
+            id="date-question" 
+            style="display: none;">
+                <label class="field question__field">
+                    <span class="field__label">Выберите дату:</span>
+                    <input type="date"
+                        name="answer-date"
+                        class="field__text question__field-text"
+                        placeholder="Дата"
+                        required/>
+                </label>
+            </div>
+    
+            <div class="constructor-card__buttons">
+                <div class="constructor-card__buttons-wrapper">
+                    <a href="#" class="constructor-card__discard">
+                        Удалить
+                    </a>
+                    <a href="#" class="btn constructor-card__save">
+                        Сохранить
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

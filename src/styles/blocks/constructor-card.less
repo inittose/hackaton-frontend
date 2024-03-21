@@ -1,4 +1,21 @@
 .constructor-card {
+    position: relative;
+
+    &__type-select {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: end;
+    }
+
+    &__container{
+        width: 870px;
+        background-color: @white;
+        border: 10px solid @blue-dark;
+        border-radius: 50px;
+        padding: 40px;
+    }
+
     &__question-wrapper {
         display: flex;
         flex-direction: row;
@@ -22,15 +39,22 @@
         height: 100%;
     }
 
+    &__buttons {
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        margin-top: 50px;
+    }
+
     &__buttons-wrapper {
-        margin-top: 240px;
         display: flex;
         justify-content: end;
         align-items: center;
     }
 
     &__discard,
-    &__save {
+    &__save,
+    &__append {
         width: 200px;
     }
 
@@ -46,5 +70,9 @@
             color: @blue-dark;
             text-decoration: underline;
         }
+    }
+
+    &__card-control {
+        margin: 30px;
     }
 }
