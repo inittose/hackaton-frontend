@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>ТестыПросто</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+</head>
+
+<body class="main">
+
+  <header class="page-header">
+    <div class="page-header__container">
+      <a href="index.html" class="page-header__logo">
+        <p class="page-header__logo-text">
+          ТЕСТЫПРОСТО
+        </p>
+      </a>
+      <!-- <div class="page-header__right-block">
+            <a href="#" class="btn page-header__sign-up">
+                Регистрация
+            </a>
+			<a href="#" class="btn btn--white page-header__sign-in">
+			    Войти
+			</a>
+		</div> -->
+    </div>
+  </header>
+
+  <div class="constructor">
+    <div class="constructor__container">
+      <div class="constructor__wrapper">
+        <article class="question-type-text">
+          <div class="constructor-card__question-wrapper">
+            <h1 class="constructor-card__number">
+              Вопрос #:
+            </h1>
+            <label class="field constructor-card__field">
+              <input type="text" name="question-text" class="field__text constructor-card__field-text" placeholder="Текст вопроса" required />
+            </label>
+          </div>
+
+          <div class="question-type-text__wrapper">
+            <label class="field question-type-text__field">
+              <span class="field__label">Напишите ответ на вопрос:</span>
+              <input type="text" name="answer-text" class="field__text question-type-text__field-text" placeholder="" readonly />
+            </label>
+          </div>
+
+          <div class="constructor-card__buttons-wrapper">
+            <a href="#" class="constructor-card__discard">
+              Сбросить
+            </a>
+            <a href="#" class="btn constructor-card__save">
+              Сохранить
+            </a>
+          </div>
+        </article>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__pic-wrapper">
+        <a href="index.html" class="page-footer__logo">
+          <picture class="page-footer__pic">
+            <img src="assets\images\it-academy.png" alt="it" class="page-footer__it-academy">
+          </picture>
+        </a>
+        <a href="index.html" class="page-footer__logo">
+          <picture class="page-footer__pic">
+            <img src="assets\images\gazprom.png" alt="gazprom" class="page-footer__gazprom">
+          </picture>
+        </a>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">
+          Создано в рамках хакатона “Молодая ИТ-Магистраль”
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
