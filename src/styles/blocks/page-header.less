@@ -4,8 +4,17 @@
 	left: 0;
     height: 150px;
 
-    &__container {
+    &::after {
+        content: '';
 
+        display: block;
+        height: 10px;
+        width: 100%;
+        background-color: @blue-dark;
+    }
+
+    &__container {
+        .container();
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -13,6 +22,25 @@
     }
 
     &__logo {
+        height: 150px;
+    }
+
+    &__logo-text {
         font-family: 'overdoze sans';
+        color: @blue-dark;
+        font-size: 128px;   
+        margin: 0;
+    }
+
+    &__right-block {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    &__sign-up,
+    &__sign-in {
+        width: 200px;
+        height: 70px;
     }
 }

@@ -1,0 +1,50 @@
+.btn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 24px 0 24px;
+	border: 2px solid  @blue-dark;
+    border-radius: 100px;
+	background-color: @blue-light;
+	outline: none;
+	color: @white;
+    font-family: "nunito";
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 20px;
+	text-align: center;
+    justify-content: center;
+	text-decoration: none;
+	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+	overflow: hidden;
+	cursor: pointer;
+
+	&:active {
+		background-color:  @blue-dark;
+		color: @white;
+	}
+
+	&:hover {
+		@media (hover: hover) {
+			background-color:  @blue-dark;
+			color: @white;
+		}
+	}
+
+	&--white {
+		background-color: @white;
+		color: @blue-dark;
+		font-weight: 700;
+
+		&:active {
+			background-color: @cyan-light	;
+			color: @blue-dark;
+		}
+	
+		&:hover {
+			@media (hover: hover) {
+				background-color: @cyan-light;
+				color: @blue-dark;
+			}
+		}
+	}
+}
