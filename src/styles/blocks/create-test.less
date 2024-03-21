@@ -1,0 +1,40 @@
+.create-test {
+
+
+    margin-top: 10px;
+    height: 666px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: data-uri("wall.jpg");
+
+    &__container {
+        .container();
+        
+        display: flex;
+        flex-direction: column;
+        margin-top: 240px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__wall,
+    &__wall-img {
+        width: 100%;
+    }
+
+    &__button {
+        width: 662px;
+        height: 116px;
+        font-size: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__easy {
+        font-family: 'overdoze sans';
+        font-size: 70px;
+        margin-top: 19px;
+    }
+
+}
