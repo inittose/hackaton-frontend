@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'overdoze sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://github.com/IsamiRi/overdoze-sans/raw/main/overdozesans.otf) format('otf');
+}
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  margin: 0;
+}
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  background-position: 0 0, 0 0;
+  background-size: auto, 100% auto;
+  background-repeat: repeat, repeat-y;
+  color: #1F1E1E;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.375;
+  overflow-x: hidden;
+  padding-top: 147px;
+}
+.page-header {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 150px;
+}
+.page-header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+.page-header__logo {
+  font-family: 'overdoze sans';
+}
+.container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
