@@ -45,6 +45,7 @@ const resources = {
   function clean() {
     return del("dist");
   }
+
   function includeHtml() {
     return gulp
       .src("src/html/*.html")
@@ -58,6 +59,7 @@ const resources = {
       .pipe(formatHtml())
       .pipe(gulp.dest("dist"));
   }
+
   function style() {
     return gulp
       .src("src/styles/styles.less")
@@ -76,6 +78,7 @@ const resources = {
       .pipe(rename("styles.min.css"))
       .pipe(gulp.dest("dist/styles"));
   }
+
   function js() {
     return gulp
       .src("src/scripts/dev/*.js")
@@ -95,12 +98,14 @@ const resources = {
       )
       .pipe(gulp.dest("dist/scripts"));
   }
+
   function jsCopy() {
     return gulp
       .src(resources.jsVendor)
       .pipe(plumber())
       .pipe(gulp.dest("dist/scripts"));
   }
+
   function copy() {
     return gulp
       .src(resources.static, {
@@ -108,6 +113,7 @@ const resources = {
       })
       .pipe(gulp.dest("dist/"));
   }
+
   function images() {
     return gulp
       .src(resources.images)
@@ -120,6 +126,7 @@ const resources = {
       )
       .pipe(gulp.dest("dist/assets/images"));
   }
+
   function svgSprite() {
     return gulp
       .src(resources.svgSprite)
@@ -138,6 +145,7 @@ const resources = {
       .pipe(rename("symbols.svg"))
       .pipe(gulp.dest("dist/assets/icons"));
   }
+
   const build = gulp.series(
     clean,
     copy,
@@ -148,10 +156,12 @@ const resources = {
     images,
     svgSprite
   );
+
   function reloadServer(done) {
     server.reload();
     done();
   }
+  
   function serve() {
     server.init({
       server: "dist"
@@ -164,6 +174,7 @@ const resources = {
     gulp.watch(resources.images, { delay: 500 }, gulp.series(images, reloadServer));
     gulp.watch(resources.svgSprite, gulp.series(svgSprite, reloadServer));
   }
+  
   const start = gulp.series(build, serve);
   export {
     clean,
