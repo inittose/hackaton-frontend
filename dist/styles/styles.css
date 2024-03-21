@@ -64,8 +64,11 @@ a {
           justify-content: space-between;
   position: relative;
 }
-.page-header__logo {
+.page-header__logo-text {
   font-family: 'overdoze sans';
+  color: #001e45;
+  font-size: 128px;
+  margin: 0;
 }
 .container {
   -webkit-box-sizing: border-box;
