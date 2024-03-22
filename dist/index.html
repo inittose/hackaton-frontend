@@ -88,6 +88,30 @@
       </div>
     </div>
   </footer>
+
+  <script>
+            // Получаем ссылку на текстовое поле
+            const textField = document.querySelector('.test-link__field .field__text');
+
+            // Обработчик события нажатия клавиши Enter
+            textField.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    // Получаем введенное значение
+                    const link = textField.value.trim();
+
+                    // Проверяем, что ссылка начинается с указанного домена
+                    const allowedDomain = 'localhost:3000'; // Укажите ваш домен здесь
+                    if (link.startsWith('http://' + allowedDomain) || link.startsWith('https://' + allowedDomain)) {
+                        // Открываем ссылку в новом окне
+                        window.open(link, '_blank');
+                    } else {
+                        // Выводим сообщение об ошибке
+                        alert('Введите корректную ссылку');
+                    }
+                }
+            });
+        </script>
+
 </body>
 
 </html>
