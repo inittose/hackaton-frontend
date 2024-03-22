@@ -1,6 +1,6 @@
 import gulp from "gulp";
 
-import jsonEditor from 'gulp-json-editor';
+//import jsonEditor from 'gulp-json-editor';
 
 import del from "del";
 import include from "gulp-file-include";
@@ -164,7 +164,7 @@ const resources = {
     jsCopy,
     images,
     svgSprite,
-    saveJSON
+    //saveJSON
   );
 
   function reloadServer(done) {
@@ -195,7 +195,7 @@ const resources = {
     jsCopy,
     images,
     svgSprite,
-    saveJSON,
+    //saveJSON,
     build,
     serve,
     start
