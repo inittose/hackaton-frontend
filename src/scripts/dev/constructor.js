@@ -164,7 +164,7 @@ $(document).ready(function() {
         download(testDataJSON, 'test.json', 'text/plain');
 
         var requestSettings = {
-            url: 'SendData', // Замените на URL вашего бэкэнда
+            url: 'http://localhost:8000/sendData', // Замените на URL вашего бэкэнда
             method: 'POST', // Метод запроса (POST, GET и т.д.)
             contentType: 'application/json', // Указываем тип содержимого как JSON
             data: testDataJSON, // Передаем JSON данные
