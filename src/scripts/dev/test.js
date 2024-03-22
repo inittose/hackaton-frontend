@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     var answers = [];
+    var questions = [];
 
     var userName;
 
@@ -36,6 +37,14 @@ $(document).ready(function() {
                     break;
             }
 
+            var questionIndex = index; // Индекс вопроса соответствует индексу ответа в массиве
+            var question = questions[questionIndex]; // Получаем информацию о вопросе из списка вопросов
+            console.log(question);
+            if (question) {
+                answerData.correct = question.correct; // Добавляем информацию о правильном ответе
+                console.log('exec2');
+            }
+
             // Добавление ответа в массив
             if (answers[index]) {
                 answers.splice(index, 1, answerData);
@@ -64,7 +73,7 @@ $(document).ready(function() {
     $.getJSON("json/test.json", function(data) {
         // Обработка данных
         $(".test__test-name-field input").val(data.testName);
-        var questions = data.questions;
+        questions = data.questions;
         questions.forEach(function(question, index) {
             var $questionCard = $("#question-template").clone().removeAttr("id").removeAttr("style");
             $questionCard.find(".constructor-card__number").text("Вопрос " + (index + 1) + ":");
@@ -118,7 +127,7 @@ $(document).ready(function() {
         userName = $('input[name="user-name"]').val().trim();
 
         console.log('Название теста:', testName);
-        console.log('Имя пользователя:', testName);
+        console.log('Имя пользователя:', userName);
         console.log('Массив ответов:', answers);
         console.log('Форматирую объект');
         
