@@ -162,6 +162,25 @@ $(document).ready(function() {
             a.click();
         }
         download(testDataJSON, 'test.json', 'text/plain');
+
+        var requestSettings = {
+            url: 'SendData', // Замените на URL вашего бэкэнда
+            method: 'POST', // Метод запроса (POST, GET и т.д.)
+            contentType: 'application/json', // Указываем тип содержимого как JSON
+            data: testDataJSON, // Передаем JSON данные
+            success: function(response) {
+                // Обработка успешного ответа от сервера
+                console.log('Успешный запрос');
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                // Обработка ошибок запроса
+                console.error('Ошибка при отправке запроса:', error);
+            }
+        };
+        
+        // Отправляем запрос на бэкэнд
+        $.ajax(requestSettings);
     });
 
     window.addEventListener('beforeunload',
