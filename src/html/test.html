@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+    @@include('blocks/head.html')
+
+    <body class="main">
+
+        @@include('blocks/page-header.html')
+
+            <div class="test">
+                <div class="test__container">
+                    <h1 class="test__test-name">
+                        Название теста:  
+                    </h1>
+                    <label class="field test__test-name-field">
+                        <input type="text" 
+                        name="test-name" 
+                        class="field__text constructor-card__field-text" 
+                        placeholder="Название" 
+                        readonly/>
+                    </label>
+
+                    <h1 class="test__test-name">
+                        Ваше имя:
+                    </h1>
+                    <label class="field test__test-username">
+                        <input type="text" 
+                        name="user-name" 
+                        class="field__text constructor-card__field-text" 
+                        placeholder="Имя" 
+                        required/>
+                    </label>
+
+                    <div class="test__wrapper">
+                        <div class="constructor-card" id="question-template" style="display: none;">
+                            <div class="constructor-card__container">
+                                <div class="constructor-card__question-wrapper">
+                                    <h1 class="constructor-card__number">
+                                        Вопрос #:   
+                                    </h1>
+                                    <label class="field constructor-card__field">
+                                        <input type="text" 
+                                        name="question-text" 
+                                        class="field__text constructor-card__field-text" 
+                                        placeholder="Текст вопроса" 
+                                        readonly/>
+                                    </label>
+                                </div>
+                            
+                                <div class="question question--text" 
+                                style="display: none;">
+                                    <label class="field question__field">
+                                        <span class="field__label">Напишите ответ на вопрос:</span>
+                                        <input type="text" 
+                                            name="answer-text" 
+                                            class="field__text question__field-text" 
+                                            placeholder="Текст" 
+                                            required/>
+                                    </label>    
+                                </div>
+                        
+                                <div class="question question--number"  
+                                style="display: none;">
+                                    <label class="field question__field">
+                                        <span class="field__label">Напишите число:</span>
+                                        <input type="text" 
+                                            name="answer-number" 
+                                            class="field__text question__field-text" 
+                                            placeholder="Число" 
+                                            required/>
+                                    </label>    
+                                </div>
+                        
+                                <div class="question question--select" style="display: none;">
+                                    <label class="field question__field">
+                                        <span class="field__label">Выберите варианты:</span>
+                                        <select name="type" 
+                                        class="field__select question__field-select">
+                                        </select>
+                                    </label>    
+                                </div>
+                             
+                                <div class="question question--date" 
+                                style="display: none;">
+                                    <label class="field question__field">
+                                        <span class="field__label">Выберите дату:</span>
+                                        <input type="date"
+                                            name="answer-date" 
+                                            class="field__text question__field-text"
+                                            placeholder="Дата"
+                                            required/>
+                                    </label>
+                                </div>
+                        
+                                <div class="constructor-card__buttons">
+                                    <div class="constructor-card__buttons-wrapper">
+                                        <a href="#" class="constructor-card__discard">
+                                            Сбросить
+                                        </a>
+                                        <a href="#" class="btn constructor-card__save">
+                                            Сохранить
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn constructor__submit" style="display: none;">
+                        Подтвердить
+                    </a>
+                </div>
+            </div>
+
+        @@include('blocks/page-footer.html')
+
+        <script src="scripts\test.min.js"></script>
+    </body>
+</html>

@@ -9,11 +9,33 @@
 
         <div class="constructor">
             <div class="constructor__container">
+                <h1 class="constructor__test-name">
+                    Название теста:  
+                </h1>
+                <label class="field constructor__test-name-field">
+                    <input type="text" 
+                    name="test-name" 
+                    class="field__text constructor-card__field-text" 
+                    placeholder="Название" 
+                    required/>
+                </label>
+
+                <h1 class="constructor__test-name">
+                    Ваше имя: 
+                </h1>
+                <label class="field constructor__test-name-field">
+                    <input type="text" 
+                    name="test-name" 
+                    class="field__text constructor-card__field-text" 
+                    placeholder="Название" 
+                    required/>
+                </label>
+
                 <div class="constructor__wrapper">
-                    <div class="constructor-card    " id="question-template" style="display: none;">
+                    <div class="constructor-card" id="question-template" style="display: none;">
                         <div class="field constructor-card__type-select">
                             <h1 class="field__label constructor-card__select-label">Выберите тип вопроса:</h1>
-                            <select name="amount" class="field__select">
+                            <select name="type" class="field__select question__field-select">
                                 <option value="text">Текст</option>
                                 <option value="number">Номер</option>
                                 <option value="select">Список</option>
@@ -36,7 +58,6 @@
                             </div>
                         
                             <div class="question question--text" 
-                            id="text-question" 
                             style="display: none;">
                                 <label class="field question__field">
                                     <span class="field__label">Напишите ответ на вопрос:</span>
@@ -44,24 +65,23 @@
                                         name="answer-text" 
                                         class="field__text question__field-text" 
                                         placeholder="Текст" 
-                                        readonly/>
+                                        required/>
                                 </label>    
                             </div>
                     
-                            <div class="question question--number" 
-                            id="number-question" 
+                            <div class="question question--number"  
                             style="display: none;">
                                 <label class="field question__field">
                                     <span class="field__label">Напишите число:</span>
                                     <input type="text" 
-                                        name="answer-text" 
+                                        name="answer-number" 
                                         class="field__text question__field-text" 
                                         placeholder="Число" 
-                                        readonly/>
+                                        required/>
                                 </label>    
                             </div>
                     
-                            <div class="question question--select" id="select-question" style="display: none;">
+                            <div class="question question--select" style="display: none;">
                                 <label class="field question__field">
                                     <span class="field__label">Выберите варианты:</span>
                                     <input type="text" 
@@ -80,16 +100,19 @@
                                     name="select4" 
                                     class="field__text question__field-text" 
                                     placeholder="Опция 4">
+                                    <input type="text" 
+                                    name="answer-select" 
+                                    class="field__text question__field-text" 
+                                    placeholder="Правильный ответ (Из предыдущих)">
                                 </label>    
                             </div>
                          
                             <div class="question question--date" 
-                            id="date-question" 
                             style="display: none;">
                                 <label class="field question__field">
                                     <span class="field__label">Выберите дату:</span>
                                     <input type="date"
-                                        name="answer-date"
+                                        name="answer-date" 
                                         class="field__text question__field-text"
                                         placeholder="Дата"
                                         required/>
@@ -120,39 +143,6 @@
 
         @@include('blocks/page-footer.html')
 
-        <script>
-            $(document).ready(function() {
-                // Function to add a new card
-                function addCard() {
-                    var newCard = $('#question-template').clone().removeAttr('id').removeAttr('style');
-                    // Set default selected value to "Текст"
-                    newCard.find('.field__select').val('text');
-                    // Show corresponding question type
-                    newCard.find('.question--text').show();
-                    $('.constructor__wrapper').append(newCard);
-                }
-        
-                // Function to handle the change event of the select element
-                $('.constructor__wrapper').on('change', '.field__select', function() {
-                    var selectedValue = $(this).val();
-                    // Hide all question types
-                    $('.question').hide();
-                    // Show the selected question type
-                    $('.question--' + selectedValue).show();
-                });
-        
-                // Function to handle the click event of the "Добавить" button
-                $('.constructor__append').on('click', function(e) {
-                    e.preventDefault();
-                    addCard();
-                });
-
-                $('.constructor__wrapper').on('click', '.constructor-card__discard', function(e) {
-                    e.preventDefault();
-                    $(this).closest('.constructor-card').remove(); // Remove the closest constructor card
-                });
-            });
-        </script>
-
+        <script src="scripts\constructor.min.js"></script>
     </body>
 </html>

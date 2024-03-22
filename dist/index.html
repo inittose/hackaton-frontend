@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <script src="scripts\jquery-3.7.1.min.js"></script>
+  <script src="scripts\jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -37,27 +38,31 @@
   </header>
 
   <main class="main">
-    <div class="create-test">
-      <div class="create-test__container">
-        <a href="../constructor.html" class="btn create-test__button">
-          <div class="create-test__btn-text">
-            СОЗДАТЬ ТЕСТ
+    <div class="home">
+      <div class="home__container">
+        <div class="create-test">
+          <div class="create-test__container">
+            <a href="../constructor.html" class="btn create-test__button">
+              <div class="create-test__btn-text">
+                СОЗДАТЬ ТЕСТ
+              </div>
+            </a>
+            <p class="create-test__easy">
+              - ЭТО ПРОСТО!
+            </p>
           </div>
-        </a>
-        <p class="create-test__easy">
-          - ЭТО ПРОСТО!
-        </p>
-      </div>
-    </div>
+        </div>
 
-    <div class="test-link">
-      <div class="test-link__container">
-        <p class="test-link__text">
-          Или введите ссылку на существующий тест в это поле:
-        </p>
-        <label class="field test-link__field">
-          <input type="text" name="first_name" class="field__text" placeholder="Ссылка на тест" required />
-        </label>
+        <div class="test-link">
+          <div class="test-link__container">
+            <p class="test-link__text">
+              Или введите ссылку на существующий тест в это поле:
+            </p>
+            <label class="field test-link__field">
+              <input type="text" name="first_name" class="field__text" placeholder="Ссылка на тест" required />
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </main>

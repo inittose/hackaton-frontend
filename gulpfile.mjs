@@ -1,5 +1,7 @@
 import gulp from "gulp";
 
+import jsonEditor from 'gulp-json-editor';
+
 import del from "del";
 import include from "gulp-file-include";
 import formatHtml from "gulp-format-html";
@@ -146,6 +148,13 @@ const resources = {
       .pipe(gulp.dest("dist/assets/icons"));
   }
 
+  function saveJSON() {
+    return gulp
+      .src(resources.static)
+      // .pipe(jsonEditor(json => json)) // jsonEditor не изменяет JSON данные, просто передает их дальше
+      .pipe(gulp.dest('dist/json')); // Сохраняем JSON файл в папку dist
+  }
+
   const build = gulp.series(
     clean,
     copy,
@@ -154,7 +163,8 @@ const resources = {
     js,
     jsCopy,
     images,
-    svgSprite
+    svgSprite,
+    saveJSON
   );
 
   function reloadServer(done) {
@@ -185,6 +195,7 @@ const resources = {
     jsCopy,
     images,
     svgSprite,
+    saveJSON,
     build,
     serve,
     start

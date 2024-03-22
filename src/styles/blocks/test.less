@@ -1,17 +1,25 @@
-.constructor {
+.test {
     background-image: data-uri("wall.jpg");
     background-position: center top;
     background-repeat: repeat-x;
     margin-top: 10px;
+    margin-bottom: 200px;
 
     &__container {
         .container();
         width: 100%;
-        margin: 100px 0 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 100px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 50px;
     }
 
     &__test-name{
@@ -23,13 +31,8 @@
         height: 70px;
     }
 
-    &__append {
-        margin: 20px 0 10px;
-        width: 200px;
-    }
-
-    &__submit {
-        margin-top: 100px;
+    &__test-username {
         width: 400px;
+        height: 70px;
     }
 }
