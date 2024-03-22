@@ -4,7 +4,6 @@ $(document).ready(function() {
 
     var userName;
 
-    //Сохранение ответа, добавление в массив
     // Сохранение ответа, добавление в массив
     $('.test__wrapper').on('click', '.constructor-card__save', function(e) {
         e.preventDefault();
@@ -17,13 +16,27 @@ $(document).ready(function() {
         if (allFieldsFilled) {
             var answerData = {};
 
-            answerData.title = $card.find('input[name="question-text"]').val();
+            answerData.questionText = $card.find('input[name="question-text"]').val(); // Текст вопроса
             
-            // Добавление ответа в зависимости от типа вопроса
-            var $input = $card.find('input:visible');
-            var answer = $input.val(); // Получение ответа из поля
-            answerData.answer = answer;
+            var questionType = $card.find('select[name="type"]').val();
+            answerData.questionType = questionType;
 
+            switch(questionType) {
+                case 'text':
+                    answerData.answer = $card.find('input[name="answer-text"]').val();
+                    break;
+                case 'number':
+                    answerData.answer = $card.find('input[name="answer-number"]').val();
+                    break;
+                case 'select':
+                    answerData.answer = $card.find('select[name="answer-select"]').val();
+                    break;
+                case 'date':
+                    answerData.answer = $card.find('input[name="answer-date"]').val();
+                    break;
+            }
+
+            // Добавление ответа в массив
             if (answers[index]) {
                 answers.splice(index, 1, answerData);
                 console.log('Replaced at:', index);
@@ -56,6 +69,7 @@ $(document).ready(function() {
             var $questionCard = $("#question-template").clone().removeAttr("id").removeAttr("style");
             $questionCard.find(".constructor-card__number").text("Вопрос " + (index + 1) + ":");
             $questionCard.find(".constructor-card__field-text[name='question-text']").val(question.title);
+            $questionCard.find("select[name='type']").val(question.type);
             if (question.type === "text") {
                 $questionCard.find(".question--text").show();
             } else if (question.type === "number") {
@@ -73,23 +87,73 @@ $(document).ready(function() {
         });
     });
 
-    function checkTestName() {
-        var testNameInput = $('input[name="test-name"]');
-        return testNameInput.val().trim() !== '';
+    function checkUserName() {
+        var userNameInput = $('input[name="user-name"]');
+        return userNameInput.val().trim() !== '';
     }
+
+    $('input[name="user-name"]').on('input', function() {
+        submitCheck();
+    });
 
     // Обработчик кнопки Подтвердить
     function submitCheck() {
-        var isTestNameFilled = checkTestName();
+        var isUserNameFilled = checkUserName();
 
         var emptyFields = $('.constructor-card:visible input:visible').filter(function() {
             return $(this).val().trim() === '';
         });
 
-        if (emptyFields.length === 0 && isTestNameFilled && questions.length > 0) {
+        if (emptyFields.length === 0 && isUserNameFilled && answers.length > 0) {
             $('.constructor__submit').show();
         } else {
             $('.constructor__submit').hide();
         }
     }
+
+    $('.constructor__submit').on('click', function(e) {
+        e.preventDefault();
+
+        testName = $('input[name="test-name"]').val().trim();
+        userName = $('input[name="user-name"]').val().trim();
+
+        console.log('Название теста:', testName);
+        console.log('Имя пользователя:', testName);
+        console.log('Массив ответов:', answers);
+        console.log('Форматирую объект');
+        
+        var answerData = {
+            testName: testName,
+            userName: userName,
+            answers: answers
+        };
+    
+        var answerDataJSON = JSON.stringify(answerData);
+    
+        console.log('JSON объект:', answerDataJSON);
+
+        function download(content, fileName, contentType) {
+            var a = document.createElement("a");
+            var file = new Blob([content], {type: contentType});
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
+        }
+        download(answerDataJSON, 'answers.json', 'text/plain');
+    });
+
+    window.addEventListener('beforeunload',
+    function (e) {
+
+        // Check if any of the input
+        // fields are filled
+        if (answers !== '' && userName !== '') {
+
+            // Cancel the event and
+            // show alert that the unsaved
+            // changes would be lost
+            e.preventDefault();
+            e.returnValue = '';
+        }
+    });
 });

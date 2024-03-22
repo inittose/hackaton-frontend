@@ -56,6 +56,15 @@
 
       <div class="test__wrapper">
         <div class="constructor-card" id="question-template" style="display: none;">
+          <div class="field constructor-card__type-select">
+            <h1 class="field__label constructor-card__select-label">Тип вопроса:</h1>
+            <select name="type" class="field__select question__field-select" disabled="true">
+              <option value="text">Текст</option>
+              <option value="number">Номер</option>
+              <option value="select">Список</option>
+              <option value="date">Дата</option>
+            </select>
+          </div>
           <div class="constructor-card__container">
             <div class="constructor-card__question-wrapper">
               <h1 class="constructor-card__number">
@@ -76,14 +85,14 @@
             <div class="question question--number" style="display: none;">
               <label class="field question__field">
                 <span class="field__label">Напишите число:</span>
-                <input type="text" name="answer-number" class="field__text question__field-text" placeholder="Число" required />
+                <input type="number" name="answer-number" class="field__text question__field-text" placeholder="Число" required />
               </label>
             </div>
 
             <div class="question question--select" style="display: none;">
               <label class="field question__field">
                 <span class="field__label">Выберите варианты:</span>
-                <select name="type" class="field__select question__field-select">
+                <select name="answer-select" class="field__select question__field-select">
                 </select>
               </label>
             </div>

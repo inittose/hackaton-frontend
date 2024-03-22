@@ -5,6 +5,12 @@ $(document).ready(function() {
 
     var testName;
 
+    // Валидация numbers
+    $('.question--number input[name="answer-number"]').on('input', function() {
+        // Удаляем все символы, кроме цифр и точки
+        $(this).val($(this).val().replace(/[^\d.]/g, ''));
+    });
+
     // Сохранение вопроса, добавление объекта в массив
     $('.constructor__wrapper').on('click', '.constructor-card__save', function(e) {
         e.preventDefault();
